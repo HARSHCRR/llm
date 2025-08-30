@@ -1,6 +1,6 @@
 # Medical Summarizer - HackLLM ESYA'25 🏥✨
 
-An advanced medical document summarization web application built for HackLLM at ESYA'25, featuring dual-mode summarization with custom transformer architecture and modern glassmorphism UI.
+An advanced medical document summarization web application built for HackLLM at ESYA'25, featuring dual-mode summarization frontend with modern glassmorphism UI. Ready for backend AI integration.
 
 ## 🌟 Features
 
@@ -9,10 +9,10 @@ An advanced medical document summarization web application built for HackLLM at 
 - **Clinician-Focused Summaries**: Technical, detailed summaries for healthcare professionals
 - **Provenance Tracking**: Source citations and reference tracking for medical accuracy
 
-### 🧠 Custom AI Architecture
-- **Dual-Decoder Transformer**: Custom TensorFlow.js implementation
-- **Attention Visualization**: Interactive heatmaps showing model focus areas
-- **Real-time Processing**: Client-side inference for privacy and speed
+### 🧠 AI Integration Ready
+- **Backend Integration**: Ready to connect with your custom AI models
+- **Mock Service**: Demonstration layer for frontend functionality
+- **Extensible Architecture**: Easy to integrate with any AI backend
 
 ### 🎨 ESYA'25 "Techmorphosis" Design
 - **Glassmorphism UI**: Modern frosted glass aesthetic with depth and transparency
@@ -30,7 +30,7 @@ An advanced medical document summarization web application built for HackLLM at 
 - **Frontend**: Next.js 14, React 18, TypeScript
 - **Styling**: TailwindCSS, Framer Motion
 - **UI Components**: shadcn/ui, Custom glassmorphism components
-- **AI/ML**: TensorFlow.js, Custom transformer architecture
+- **3D Graphics**: OGL, Three.js for background effects
 - **Animations**: Framer Motion, CSS3 transforms
 - **Deployment**: Vercel-ready
 
@@ -78,23 +78,20 @@ src/
 ├── app/                    # Next.js app directory
 ├── components/
 │   ├── medical/           # Medical-specific components
-│   ├── model/             # AI model visualization
 │   └── ui/                # Reusable UI components
 ├── data/                  # Mock data and services
 ├── lib/                   # Utility functions
-├── models/
-│   └── architecture/      # Custom transformer implementation
 └── styles/                # Custom CSS and themes
 ```
 
-## 🔬 Model Architecture
+## 🔌 Backend Integration
 
-The application features a custom **Dual-Decoder Transformer** built with TensorFlow.js:
+The frontend is designed to easily integrate with your custom AI models:
 
-- **Shared Encoder**: Processes medical text with attention mechanisms
-- **Dual Decoders**: Separate pathways for patient and clinician summaries
-- **Attention Visualization**: Real-time heatmaps showing model focus
-- **Provenance Tracking**: Links summary segments to source text
+- **Mock Service**: Demonstrates expected API structure
+- **Flexible Architecture**: Easy to swap mock service with real AI backend
+- **Type Safety**: Full TypeScript interfaces for data structures
+- **Error Handling**: Robust error states and loading indicators
 
 ## 🎨 Design Philosophy
 

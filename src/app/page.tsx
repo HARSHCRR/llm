@@ -8,8 +8,7 @@ import Navbar from '@/components/ui/navbar';
 import MedicalQAInput from '@/components/medical/medical-qa-input';
 import DualSummaryOutput from '@/components/medical/dual-summary-output';
 import ProvenanceTracker from '@/components/medical/provenance-tracker';
-import ModelArchViewer from '@/components/model/model-arch-viewer';
-import ProcessingIndicator from '@/components/model/processing-indicator';
+import ProcessingIndicator from '@/components/medical/processing-indicator';
 import SafetyDisclaimer from '@/components/ui/safety-disclaimer';
 import { MockMedicalService, SummaryData, sampleMedicalTexts } from '@/data/mock-service';
 import { Button } from '@/components/ui/button';
@@ -22,7 +21,7 @@ export default function Home() {
   const [processingProgress, setProcessingProgress] = useState(0);
   const [selectedProvenance, setSelectedProvenance] = useState<string | null>(null);
   const [showSafetyDisclaimer, setShowSafetyDisclaimer] = useState(false);
-  const [activeSection, setActiveSection] = useState<'input' | 'output' | 'provenance' | 'model'>('input');
+  const [activeSection, setActiveSection] = useState<'input' | 'output' | 'provenance'>('input');
 
   const handleTextSubmit = async (text: string) => {
     setIsProcessing(true);
@@ -62,7 +61,7 @@ export default function Home() {
     setSelectedProvenance(selectedProvenance === id ? null : id);
   };
 
-  const scrollToSection = (section: 'input' | 'output' | 'provenance' | 'model') => {
+  const scrollToSection = (section: 'input' | 'output' | 'provenance') => {
     setActiveSection(section);
     const element = document.getElementById(section);
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -103,7 +102,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.8 }}
             >
-              Dual-decoder transformer for patient-friendly & clinician-focused medical summaries
+              Advanced AI-powered medical document summarization with dual-mode output
             </motion.p>
             
             <motion.div
@@ -135,8 +134,7 @@ export default function Home() {
               {[
                 { id: 'input', label: 'Input', icon: FileText },
                 { id: 'output', label: 'Summaries', icon: Brain },
-                { id: 'provenance', label: 'Provenance', icon: Target },
-                { id: 'model', label: 'Model Arch', icon: Brain }
+                { id: 'provenance', label: 'Provenance', icon: Target }
               ].map(({ id, label, icon: Icon }) => (
                 <Button
                   key={id}
@@ -204,12 +202,6 @@ export default function Home() {
           />
         </section>
 
-        {/* Model Architecture Section */}
-        <section id="model" className="mb-16">
-          <ModelArchViewer 
-            isProcessing={isProcessing}
-          />
-        </section>
       </main>
 
       {/* Footer */}
@@ -220,7 +212,7 @@ export default function Home() {
               <h3 className="font-bold text-white mb-4">HackLLM Medical Summarizer</h3>
               <p className="text-sm text-gray-400">
                 Built for ESYA'25 - Showcasing the future of AI in healthcare with 
-                dual-decoder transformer architecture.
+                advanced medical document analysis.
               </p>
             </div>
             <div>
@@ -229,7 +221,7 @@ export default function Home() {
                 <li>• Patient-friendly summaries</li>
                 <li>• Clinician-focused analysis</li>
                 <li>• Real-time provenance tracking</li>
-                <li>• Interactive model visualization</li>
+                <li>• Modern glassmorphism UI</li>
               </ul>
             </div>
             <div>
