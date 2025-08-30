@@ -1,0 +1,106 @@
+/* Medical Theme Specific Styles */
+.medical-container {
+  background: radial-gradient(ellipse at center, rgba(245, 87, 108, 0.1) 0%, transparent 70%);
+}
+
+.clinician-theme {
+  background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(0, 242, 254, 0.05));
+  border-left: 3px solid #4facfe;
+}
+
+.patient-theme {
+  background: linear-gradient(135deg, rgba(245, 87, 108, 0.1), rgba(240, 147, 251, 0.05));
+  border-left: 3px solid #f5576c;
+}
+
+.provenance-highlight {
+  background: rgba(103, 126, 234, 0.2);
+  border-radius: 4px;
+  padding: 2px 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.provenance-highlight:hover {
+  background: rgba(103, 126, 234, 0.4);
+  transform: scale(1.02);
+}
+
+.medical-pulse {
+  animation: medicalPulse 3s ease-in-out infinite;
+}
+
+@keyframes medicalPulse {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 rgba(245, 87, 108, 0.7);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 0 10px rgba(245, 87, 108, 0);
+    transform: scale(1.02);
+  }
+}
+
+.processing-indicator {
+  position: relative;
+  display: inline-block;
+}
+
+.processing-indicator::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(245, 87, 108, 0.3);
+  border-top: 2px solid #f5576c;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.attention-heatmap {
+  background: linear-gradient(45deg, 
+    rgba(245, 87, 108, 0.1) 0%,
+    rgba(240, 147, 251, 0.2) 25%,
+    rgba(79, 172, 254, 0.3) 50%,
+    rgba(0, 242, 254, 0.2) 75%,
+    rgba(103, 126, 234, 0.1) 100%
+  );
+  animation: heatmapFlow 4s ease-in-out infinite;
+}
+
+@keyframes heatmapFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.model-node {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(103, 126, 234, 0.5);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.model-node:hover {
+  background: rgba(103, 126, 234, 0.2);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(103, 126, 234, 0.5);
+}
+
+.connection-line {
+  stroke: rgba(103, 126, 234, 0.6);
+  stroke-width: 2;
+  animation: connectionPulse 2s ease-in-out infinite;
+}
+
+@keyframes connectionPulse {
+  0%, 100% { stroke-opacity: 0.6; }
+  50% { stroke-opacity: 1; }
+}
